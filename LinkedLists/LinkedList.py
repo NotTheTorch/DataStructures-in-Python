@@ -90,6 +90,14 @@ class LinkedList:
                 itr.next = itr.next.next
             itr = itr.next
         return
+    def find_middle_node(self):
+        slow = self.head
+        fast = self.head
+
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+        return slow.data
 
     def print(self):
         lstr = ''
